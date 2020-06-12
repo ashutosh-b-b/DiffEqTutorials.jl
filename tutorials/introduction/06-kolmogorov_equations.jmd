@@ -77,8 +77,8 @@ trajectories = 100000
 Now lets define our model m and the optimiser
 ```julia
 m = Chain(Dense(d, 32, leakyrelu),Dense(32, 64, leakyrelu),Dense(64 , 32 , leakyrelu) , Dense(32 , 1))
-m = fmap(cu , m)
 opt = Flux.ADAM(0.01)
+m = fmap(cu , m)
 ```
 And then finally call the solver
 ```julia
@@ -109,6 +109,7 @@ end
 We should reshape the inputs and outputs to make it compatible with our model
 ```julia
 x_model = reshape(x_out, 1 , size(x_out)[1])
+m = fmap(cpu , m)
 y_out = m(x_model)
 y_out = reshape(y_out , 13 , 1)
 ```
