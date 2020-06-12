@@ -4,8 +4,8 @@ author: Ashutosh Bharambe
 ---
 
 ```julia
-using Flux, StochasticDiffEq
-using  NeuralNetDiffEq
+using Flux
+using  NeuralNetDiffEq , StochasticDiffEq
 using Plots
 using Distributions
 using CuArrays
