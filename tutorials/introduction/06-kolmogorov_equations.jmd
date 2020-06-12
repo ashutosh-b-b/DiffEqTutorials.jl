@@ -8,6 +8,7 @@ using Flux, StochasticDiffEq
 using  NeuralNetDiffEq
 using Plots
 using Distributions
+using CuArrays
 ```
 ## Introduction on Kolmogorov Equations
 
